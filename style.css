@@ -1,0 +1,126 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI,sans-serif;
+}
+
+body{
+height:100vh;
+background:linear-gradient(
+135deg,
+#ffd6e7,
+#fff0c7,
+#ffe6f2
+);
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.container{
+perspective:1200px;
+}
+
+.card{
+width:400px;
+height:500px;
+position:relative;
+transform-style:preserve-3d;
+transition:1.5s;
+}
+
+.card.open{
+transform:rotateY(180deg);
+}
+
+.front,
+.inside{
+position:absolute;
+width:100%;
+height:100%;
+border-radius:25px;
+backface-visibility:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+.front{
+background:#ff7ba9;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:20px;
+}
+
+.front button,
+.inside button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:16px;
+}
+
+.inside{
+background:white;
+transform:rotateY(180deg);
+padding:30px;
+text-align:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+gap:20px;
+}
+
+.teddy{
+font-size:80px;
+animation:bounce 2s infinite;
+}
+
+.flowers{
+font-size:30px;
+}
+
+.quote{
+font-style:italic;
+color:#555;
+}
+
+.glow{
+position:absolute;
+width:250px;
+height:250px;
+background:white;
+border-radius:50%;
+filter:blur(80px);
+opacity:.3;
+animation:pulse 3s infinite;
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.2);
+}
+}
+
+@keyframes bounce{
+50%{
+transform:translateY(-15px);
+}
+}
+
+.petals span{
+position:absolute;
+top:-50px;
+font-size:25px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(360deg);
+}
+}
