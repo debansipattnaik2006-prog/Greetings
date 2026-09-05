@@ -1,65 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Special Greeting Card</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Little Something For You 💌</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-<div class="petals"></div>
-
-<div class="container">
-
-    <div class="card" id="card">
-
-        <div class="front">
-
-            <div class="glow"></div>
-
-            <h1>💌 A Special Greeting</h1>
-
-            <p>Click below to open your surprise</p>
-
-            <button onclick="openCard()">Open Card</button>
-
-        </div>
-
-        <div class="inside">
-
-            <div class="teddy">🧸</div>
-
-            <h2>Best Wishes!</h2>
-
-            <p>
-                May your life be filled with happiness,
-                success, beautiful memories and endless smiles.
+    <section id="openingScreen">
+        <div class="card">
+            <p class="small-text">
+                A LITTLE SOMETHING
             </p>
-
-            <div class="quote">
-                "The future belongs to those who believe
-                in the beauty of their dreams."
-            </div>
-
-            <div class="flowers">
-                🌹 🌸 🌷 🌼 🌺
-            </div>
-
-            <button onclick="playMusic()">🎵 Play Music</button>
-
+            <h1>
+                For You 💌
+            </h1>
+            <p class="subtitle">
+                Someone made this little corner of the internet
+                just for you...
+            </p>
+            <button id="openButton">
+                Open 💖
+            </button>
         </div>
+    </section>
+    <section id="personalizeScreen" class="hidden">
+        <div class="card">
+            <p class="small-text">
+                MAKE IT PERSONAL
+            </p>
+            <h2>
+                Create Your Greeting ✨
+            </h2>
+            <p class="subtitle">
+                Add a few little details to make this card special.
+            </p>
+            <label for="recipientName">
+                Who is this greeting for? 💕
+            </label>
+            <input
+                type="text"
+                id="recipientName"
+                placeholder="Enter their name"
+            >
+            <label for="customMessage">
+                Write your message 💌
+            </label>
+            <textarea
+                id="customMessage"
+                placeholder="Write something sweet..."
+                rows="4"
+            ></textarea>
+            <label for="photoInput">
+    Add a special photo 🖼️
+</label>
 
-    </div>
+<input
+    type="file"
+    id="photoInput"
+    accept="image/*"
+>
+            <button id="createButton">
+                Create My Greeting 🌸
+            </button>
+        </div>
+    </section>
+    <section id="greetingScreen" class="hidden">
+        <div class="greeting-card">
+            <div class="bouquet">
+                <div class="flower flower1">
+                    🌸
+                </div>
+                <div class="flower flower2">
+                    🌷
+                </div>
+                <div class="flower flower3">
+                    🌼
+                </div>
+                <div class="flower flower4">
+                    🌸
+                </div>
+                <div class="flower flower5">
+                    🌷
+                </div>
+                <div class="leaves">
+                    🌿 🌿 🌿
+                </div>
+            </div>
+            <div class="photo-container hidden" id="photoContainer">
+
+    <img
+        id="displayPhoto"
+        src=""
+        alt="Your special photo"
+    >
 
 </div>
+            <p class="small-text">
+                A MESSAGE FOR YOU
+            </p>
+            <h2>
+                Dear <span id="displayName">You</span>, 💕
+            </h2>
+            <p
+                class="message"
+                id="displayMessage"
+            >
+                Some people make ordinary days feel
+                a little more beautiful just by being there.
+            </p>
+            <div class="quote" id="quoteText">
+    ✨ Little moments can hold the biggest memories. ✨
+</div>
 
-<audio id="music">
-    <source src="assets/music.mp3" type="audio/mpeg">
-</audio>
-
-<script src="script.js"></script>
-
+<button id="quoteButton">
+    Another Quote ✨
+</button>
+            <button id="newGreetingButton">
+                Create Another 💌
+            </button>
+        </div>
+    </section>
+    <script src="script.js"></script>
 </body>
 </html>
